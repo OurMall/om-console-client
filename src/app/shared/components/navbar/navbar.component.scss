@@ -1,0 +1,83 @@
+@use "sass:color";
+@use "~src/assets/sass/variables";
+
+.navbar {
+	display: block;
+	width: 100vw;
+	min-width: 100%;
+	height: var(--navbar-height);
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+	box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+	z-index: 1000;
+	overflow: hidden;
+
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 0.65rem;
+
+		.brand {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			.logo {
+				height: 40px;
+				width: 40px;
+			}
+
+			.text {
+				font-weight: 700;
+				font-size: 1.25rem;
+				margin-left: 0.5rem;
+
+				&:hover {
+					color: variables.$main-color;
+				}
+			}
+		}
+
+		nav {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+
+			.link {
+				padding: 0 0.95rem 0 0.95rem;
+				font-weight: 700;
+				color: rgba($color: variables.$dark-alt-color, $alpha: 0.95);
+				letter-spacing: 0.75px;
+				cursor: pointer;
+
+				.icon {
+					display: none;
+				}
+
+				&:hover {
+					transition: 0.3s all ease-in-out;
+					color: variables.$main-color;
+				}
+			}
+
+			.active {
+				&:hover {
+					&::after {
+						display: block;
+						content: "";
+						position: relative;
+						bottom: -10px;
+						height: 3px;
+						background-color: variables.$main-color;
+					}
+				}
+			}
+		}
+	}
+}
