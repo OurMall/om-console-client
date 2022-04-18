@@ -1,0 +1,45 @@
+@use "~src/assets/sass/variables";
+
+.footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    min-width: 100%;
+    height: 60px;
+    border-top: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+    box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.5);
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1rem;
+
+        .copyright {
+
+            span {
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .link {
+                color: rgba($color: variables.$dark-alt-color, $alpha: .85);
+                padding: 0 .75rem;
+
+                &:hover {
+                    color: rgba($color: variables.$main-color, $alpha: 1);
+                }
+            }
+        }
+    }
+}   

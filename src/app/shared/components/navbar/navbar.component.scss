@@ -21,7 +21,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 0.65rem;
+		padding: 0 1.5rem;
 
 		.brand {
 			display: flex;
@@ -34,6 +34,7 @@
 			}
 
 			.text {
+				color: rgba($color: variables.$dark-alt-color, $alpha: 0.95);
 				font-weight: 700;
 				font-size: 1.25rem;
 				margin-left: 0.5rem;
@@ -52,7 +53,7 @@
 			.link {
 				padding: 0 0.95rem 0 0.95rem;
 				font-weight: 700;
-				color: rgba($color: variables.$dark-alt-color, $alpha: 0.95);
+				color: rgba($color: variables.$dark-alt-color, $alpha: 0.65);
 				letter-spacing: 0.75px;
 				cursor: pointer;
 
