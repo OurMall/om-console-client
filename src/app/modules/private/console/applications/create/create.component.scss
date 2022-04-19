@@ -1,0 +1,100 @@
+@use "~src/assets/sass/variables";
+
+.om-container-flex {
+    height: 100%;
+    max-width: 866px;
+    margin: 0 auto 0 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    //align-items: center;
+    animation: 1s fadeIn 0s ease-in;
+
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-bottom: 2.5rem;
+            border-bottom: 2px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+
+            .title {
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 1.15rem;
+                font-weight: normal;
+                color: rgba($color: variables.$dark-alt-color, $alpha: 0.8);
+            }
+        }
+
+        .body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 2rem 0;
+
+            &__form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                margin: 0 .5rem;
+
+                .om-field-group {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .om-field {
+                        min-width: 48%;
+                        flex-wrap: wrap;
+
+                        input {
+                            //min-width: 300px;
+                            display: block;
+                        }
+                    }
+
+                    .preview {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &__logo {
+                            height: 150px;
+                            width: 150px;
+                            object-fit: contain;
+                        }
+                    }   
+                }
+
+                .type__section {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+
+                .om-field > label {
+                    font-weight: 600;
+                    padding: 0 0 .5rem .5rem;
+                    font-size: .75rem;
+
+                    &::after {
+                        content: "*";
+                        color: red;
+                        margin-left: .2rem;
+                    }
+                }
+            }
+        }
+    }
+}

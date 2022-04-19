@@ -15,7 +15,7 @@
 			position: sticky;
 			top: var(--navbar-height);
 			left: 0;
-			background-color: rgba($color: variables.$dark-alt-color, $alpha: 0.2);
+			background-color: rgba($color: #eeeeee, $alpha: 1);
 			overflow: hidden;
 
 			&__content {

@@ -1,0 +1,62 @@
+<div class="om-container-flex">
+    <div class="content">
+        <h2 class="heading">
+            <span class="title">
+                Crear aplicaci&oacute;n
+            </span>
+            <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum eos magni magnam corrupti repellat eius laborum facilis iusto quo eveniet?
+            </p>
+        </h2>
+        <div class="body">
+            <form class="body__form" (ngSubmit)="onSubmit()">
+                <div class="om-field-group">
+                    <div class="om-field">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="om-input" id="name" placeholder="Example: Our Mall">
+                    </div>
+                    <div class="om-field">
+                        <label for="uri">URI</label>
+                        <input type="text" id="uri" class="om-input" placeholder="yourapp.example.com">
+                    </div>
+                </div>
+                <div class="om-field-group">
+                    <div class="om-field">
+                        <label for="policy">Politica</label>
+                        <input type="text" id="policy" class="om-input" placeholder="yourapp.example.com/privacy">
+                    </div>
+                    <div class="om-field">
+                        <label for="terms">Terminos</label>
+                        <input type="text" id="terms" class="om-input" placeholder="yourapp.example.com/terms">
+                    </div>
+                </div>
+                <div class="om-field-group">
+                    <div class="preview om-field">
+                        <img class="preview__logo" src="assets/logos/mall.png" alt="App name logo preview">
+                    </div>
+                    <div class="om-field">
+                        <label for="logo">Logo</label>
+                        <input type="url" id="logo" class="om-input" placeholder="yourapp.example.com/logo.svg">
+                    </div>
+                </div>
+                <div class="om-field">
+                    <label for="callback-uri">URI de redireccionamiento</label>
+                    <input type="url" id="callback-uri" class="om-input" placeholder="yourapp.example.com/callback">
+                </div>
+                <div class="type__section">
+                    <h3 class="field__title">
+                        Tipo de aplicaci&oacute;n
+                    </h3>
+                    <div class="radio__zone">
+                        <input type="radio" id="type" placeholder="Web">
+                        <label for="type">Web</label>
+                    </div>
+                </div>
+                <div class="om-field">
+                    <label for="contact">Contacto</label>
+                    <input type="text" id="contact" class="om-input" placeholder="email@example.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
