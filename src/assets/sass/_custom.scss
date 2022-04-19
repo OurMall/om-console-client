@@ -1,14 +1,37 @@
 @use "variables";
 
+/* TEXT
+================================================
+*/
+.active {
+	color: variables.$main-color;
+}
+
+.om-link {
+	color: rgba($color: variables.$dark-alt-color, $alpha: 0.8);
+	text-decoration: none;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:hover {
+		color: rgba($color: variables.$main-color, $alpha: 1);
+		text-decoration: underline;
+	}
+}
+
 /* SECTIONS
 ================================================
 */
 
-.section {
-    display: block;
-    width: 100%;
-    height: calc(100vh - var(--navbar-height));
-    min-height: 100%;
+.om-section {
+	display: block;
+	width: 100%;
+	height: calc(100vh - var(--navbar-height));
+	min-height: 100%;
+}
+
+.om-container-flex {
+	display: flex;
 }
 
 /* ================================================ */
@@ -17,22 +40,79 @@
 ================================================
 */
 
-.core__button {
-    display: inline-flex;
-    padding: .85rem;
-    background-color: variables.$main-color;
-    color: variables.$light-color;
-    border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.5);
+%_button {
+	display: inline-block;
+	border: none;
+	outline: none;
+	padding: 0.75rem 1rem;
+	border-radius: 0;
+	cursor: pointer;
+}
 
-    .icon {
-        margin-left: .5rem;
-    }
+.om-button {
+	@extend %_button;
+	font-weight: 700;
+	font-size: 1.15rem;
+	color: variables.$light-color;
+	background-color: variables.$main-color;
+	border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.5);
 
-    &:hover {
-        transition: .5s all ease-in;
-        border-radius: 10px;
-        background-color: variables.$main-alt-color;
-    }
+	&:hover {
+		transition: 0.5s all ease-in;
+		background-color: variables.$main-alt-color;
+		border-radius: 10px;
+	}
+}
+
+.om-button-flex {
+	@extend .om-button;
+	display: inline-flex;
+	justify-content: center;
+
+	.icon {
+		margin-left: 0.5rem;
+	}
+}
+
+.om-button-disabled {
+	background-color: variables.$main-alt-color;
+	cursor: default;
+
+	&:hover {
+		background-color: variables.$main-alt-color;
+	}
+}
+
+/* ================================================= */
+
+/* FORMS
+================================================
+*/
+
+.om-field {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 0 1.5rem 0;
+}
+
+%_input {
+	padding: 0.95rem 1.35rem;
+	font-size: 14px;
+	background-color: rgba($color: variables.$dark-alt-color, $alpha: 0.1);
+	outline: none;
+	border: none;
+	border-radius: 5px 5px 0 0;
+	border-bottom: 2px solid rgba($color: variables.$dark-alt-color, $alpha: 0.5);
+
+	&:focus {
+		outline: none;
+		border-bottom: 2px solid variables.$main-color;
+	}
+}
+
+.om-input {
+	@extend %_input;
 }
 
 /* ================================================= */

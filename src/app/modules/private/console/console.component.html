@@ -1,0 +1,26 @@
+<div class="console om-section">
+	<div class="om-container-flex">
+		<aside class="wrapper">
+			<div class="wrapper__content">
+				<div class="header">
+					<img
+						class="logo"
+						src="assets/logos/mall.png"
+						alt="Our Mall main logo"
+					/>
+					<a routerLink="../console" class="title">Developer portal</a>
+				</div>
+				<div class="body">
+					<a routerLink="applications" routerLinkActive="active" class="link">
+						Aplicaciones
+					</a>
+					<a routerLink="" class="link"> Documentaci&oacute;n </a>
+					<a routerLink="" class="link"> FAQ </a>
+				</div>
+			</div>
+		</aside>
+		<section class="section__container">
+			<router-outlet></router-outlet>
+		</section>
+	</div>
+</div>

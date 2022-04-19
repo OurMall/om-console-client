@@ -1,0 +1,93 @@
+@use "~src/assets/sass/variables";
+
+.console {
+	animation: 2s fadeIn 0s ease-in;
+
+	.om-container-flex {
+		height: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.wrapper {
+			width: 30%;
+			height: 100%;
+			display: block;
+			position: sticky;
+			top: var(--navbar-height);
+			left: 0;
+			background-color: rgba($color: variables.$dark-alt-color, $alpha: 0.2);
+			overflow: hidden;
+
+			&__content {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				padding: 1rem 1.5rem;
+				overflow-y: scroll;
+
+				.header {
+					display: flex;
+					justify-content: flex-start;
+					padding: 0 0 1rem 0;
+					margin: 0 0 0.5rem 0;
+					align-items: center;
+
+					.logo {
+						width: 40px;
+						height: 40px;
+					}
+
+					.title {
+						color: variables.$dark-alt-color;
+						text-transform: uppercase;
+						font-size: 1rem;
+						margin-left: 0.5rem;
+
+						&:hover {
+							cursor: pointer;
+							color: variables.$main-color;
+						}
+					}
+				}
+
+				.body {
+					height: 30%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+
+					.link {
+						color: rgba($color: variables.$dark-alt-color, $alpha: 0.7);
+						letter-spacing: 1px;
+						padding: 1rem 1.25rem;
+
+						&:hover {
+							color: variables.$dark-alt-color;
+						}
+					}
+
+					.active {
+						background-color: variables.$main-color;
+						color: variables.$light-color;
+						border-radius: 5px;
+
+						&:hover {
+							color: variables.$light-alt-color;
+							background-color: variables.$main-color;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+
+		.section__container {
+			height: 100%;
+			display: block;
+			width: 70%; // Aside is holding the other 30 percent
+			max-width: 1366px;
+			margin: 0 auto 0 auto;
+			overflow: hidden;
+		}
+	}
+}

@@ -1,39 +1,52 @@
 @use "~src/assets/sass/variables";
 
 .login {
-    animation: 2s fadeIn 0s ease-in;
+	animation: 2s fadeIn 0s ease-in;
 
-    .container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+	.container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
-        .card {
-            width: 420px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.5);
-            border-radius: 2.5px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.95);
+		.card {
+			width: 420px;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.5);
+			border-radius: 2.5px;
+			padding: 1rem 1.5rem;
+			box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.95);
 
-            &__header {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0;
+			&__header {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 2rem 0;
 
-                .title {
-                    color: rgba($color: variables.$dark-alt-color, $alpha: 0.6);
-                }
-            }
+				.title {
+					color: rgba($color: variables.$dark-alt-color, $alpha: 0.6);
+					font-size: 2rem;
+				}
+			}
 
-            &__body {
-                width: 90%;
-                background-color: yellow;
-            }
-        }
-    }
+			&__body {
+				display: flex;
+				flex-direction: column;
+			}
+
+			&__footer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-top: 2px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+				border-radius: 5px;
+
+				.forgot__password {
+					padding: 1rem 0;
+				}
+			}
+		}
+	}
 }

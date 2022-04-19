@@ -1,15 +1,42 @@
-<div class="login section">
-    <div class="container">
-        <div class="card">
-            <div class="card__header">
-                <h2 class="title">Acceder</h2>
-            </div>
-            <div class="card__body">
-                hola
-            </div>
-            <div class="card__body">
-
-            </div>
-        </div>
-    </div>
+<div class="login om-section">
+	<div class="container">
+		<div class="card">
+			<div class="card__header">
+				<h2 class="title">Iniciar Sesi&oacute;n</h2>
+			</div>
+			<div class="card__body">
+				<form (ngSubmit)="onSubmit()">
+					<div class="om-field">
+						<input
+							class="om-input"
+							type="email"
+							id="email"
+							placeholder="Correo electr&oacute;nico"
+						/>
+					</div>
+					<div class="om-field">
+						<input
+							class="om-input"
+							type="password"
+							id="password"
+							placeholder="Contrase&ntilde;a"
+						/>
+					</div>
+					<div class="om-field">
+						<button class="om-button-flex" type="submit">
+							Acceder
+							<i class="icon uil uil-share"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="card__footer">
+				<div class="forgot__password">
+					<a routerLink="passwordRecovery" class="om-link"
+						>&iquest;Olvidaste tu contrase&ntilde;a?</a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

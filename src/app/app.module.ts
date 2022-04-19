@@ -24,11 +24,7 @@ import { environment } from '@environment/environment';
 			registrationStrategy: 'registerWhenStable:30000',
 		}),
 	],
-	providers: [
-
-	],
-	bootstrap: [
-		AppComponent
-	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

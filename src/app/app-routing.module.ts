@@ -5,25 +5,49 @@ const routes: Routes = [
 	{
 		path: '',
 		redirectTo: 'home',
-		pathMatch: 'full'
+		pathMatch: 'full',
 	},
-	{ 
-		path: 'home', 
-		loadChildren: () => import('./modules/public/home/home.module').then(m => m.HomeModule) 
+	{
+		path: 'home',
+		data: {
+			title: 'Our Mall for Developers',
+		},
+		loadChildren: () =>
+			import('./modules/public/home/home.module').then((m) => m.HomeModule),
 	},
-	{ 
-		path: 'login', 
-		loadChildren: () => import('./modules/public/login/login.module').then(m => m.LoginModule) 
+	{
+		path: 'login',
+		data: {
+			title: 'Iniciar Session',
+		},
+		loadChildren: () =>
+			import('./modules/public/login/login.module').then((m) => m.LoginModule),
 	},
-	{ 
-		path: '404', 
-		loadChildren: () => import('./modules/public/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) 
+	{
+		path: 'console',
+		data: {
+			title: 'Consola',
+		},
+		loadChildren: () =>
+			import('./modules/private/console/console.module').then(
+				(m) => m.ConsoleModule
+			),
+	},
+	{
+		path: '404',
+		data: {
+			title: '404',
+		},
+		loadChildren: () =>
+			import('./modules/public/page-not-found/page-not-found.module').then(
+				(m) => m.PageNotFoundModule
+			),
 	},
 	{
 		path: '**',
 		redirectTo: '404',
 		pathMatch: 'full',
-	}
+	},
 ];
 
 @NgModule({

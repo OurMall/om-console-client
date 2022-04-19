@@ -9,6 +9,7 @@
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
+	background-color: variables.$light-color;
 	border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
 	box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.3);
 	z-index: 1000;
@@ -68,16 +69,7 @@
 			}
 
 			.active {
-				&:hover {
-					&::after {
-						display: block;
-						content: "";
-						position: relative;
-						bottom: -10px;
-						height: 3px;
-						background-color: variables.$main-color;
-					}
-				}
+				color: variables.$main-color;
 			}
 		}
 	}
