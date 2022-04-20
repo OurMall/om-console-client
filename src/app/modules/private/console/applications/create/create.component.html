@@ -13,7 +13,7 @@
                 <div class="om-field-group">
                     <div class="om-field">
                         <label for="name">Nombre</label>
-                        <input type="text" class="om-input" id="name" placeholder="Example: Our Mall">
+                        <input type="text" class="om-input" id="name" placeholder="Example: Our Mall" autofocus>
                     </div>
                     <div class="om-field">
                         <label for="uri">URI</label>
@@ -31,9 +31,10 @@
                     </div>
                 </div>
                 <div class="om-field-group">
-                    <div class="preview om-field">
+                    <figcaption class="preview om-field">
                         <img class="preview__logo" src="assets/logos/mall.png" alt="App name logo preview">
-                    </div>
+                        <figure>La imagen debe ser de 500x500</figure>
+                    </figcaption>
                     <div class="om-field">
                         <label for="logo">Logo</label>
                         <input type="url" id="logo" class="om-input" placeholder="yourapp.example.com/logo.svg">
@@ -43,18 +44,32 @@
                     <label for="callback-uri">URI de redireccionamiento</label>
                     <input type="url" id="callback-uri" class="om-input" placeholder="yourapp.example.com/callback">
                 </div>
-                <div class="type__section">
-                    <h3 class="field__title">
-                        Tipo de aplicaci&oacute;n
-                    </h3>
-                    <div class="radio__zone">
-                        <input type="radio" id="type" placeholder="Web">
-                        <label for="type">Web</label>
+                <div class="type">
+                    <div class="header">
+                        <h3 class="title">Tipo de aplicaci&oacute;n</h3>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum officiis enim modi rem officia corporis.
+                        </p>
+                    </div>
+                    <div class="type__content">
+                        <input class="radio-input" type="radio" id="type" checked>
+                        <i class="icon uil uil-browser"></i>
+                        <div class="information">
+                            <label for="type">
+                                Web
+                            </label>
+                            <p>La aplicaci&oacute;n se ejecuta en un navegador web</p>
+                        </div>
                     </div>
                 </div>
                 <div class="om-field">
                     <label for="contact">Contacto</label>
                     <input type="text" id="contact" class="om-input" placeholder="email@example.com">
+                </div>
+                <div class="om-field">
+                    <button type="submit" class="om-button-flex">
+                        Crear
+                    </button>
                 </div>
             </form>
         </div>

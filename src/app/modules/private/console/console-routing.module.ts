@@ -8,6 +8,14 @@ const routes: Routes = [
 		component: ConsoleComponent,
 		children: [
 			{
+				path: '',
+				redirectTo: 'dashboard',
+				pathMatch: 'full'
+			},
+			{
+				path: 'dashboard',
+			},
+			{
 				path: 'applications',
 				data: {
 					title: 'Aplicaciones',

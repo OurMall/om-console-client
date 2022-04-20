@@ -2,18 +2,18 @@
 
 .om-container-flex {
     height: 100%;
-    max-width: 866px;
-    margin: 0 auto 0 auto;
     flex-direction: column;
     justify-content: flex-start;
-    //align-items: center;
     animation: 1s fadeIn 0s ease-in;
+    overflow-y: auto;
 
     .content {
-        height: 100%;
+        //height: 100%; This line works without overflow-y
+        max-width: 866px;
+        padding: 2rem 1rem;
+        margin: 0 auto 0 auto;
         display: flex;
         flex-direction: column;
-        padding: 2rem 1rem;
 
         .heading {
             display: flex;
@@ -77,10 +77,53 @@
                     }   
                 }
 
-                .type__section {
+                .type {
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
+                    padding: 0 0 1.5rem 0;
+
+                    .header {
+                        margin-bottom: 1rem;
+
+                        .title {
+                            padding-bottom: 1rem;
+                        }
+
+                        .description {
+                            font-size: 14px;
+                        }
+                    }
+
+                    &__content {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .radio-input {
+                            cursor: pointer;
+                            margin-right: .5rem;
+                        }
+
+                        .icon {
+                            font-size: 32px;
+                            margin-right: .5rem;
+                        }
+
+                        .information {
+                            display: flex;
+                            flex-direction: column;
+
+                            label {
+                                color: variables.$main-color;
+                                font-weight: 700;
+                            }
+
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
                 }
 
                 .om-field > label {
