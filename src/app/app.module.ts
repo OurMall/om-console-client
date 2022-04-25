@@ -5,10 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-import { AppComponent } from '@app/app.component';
-import { SharedModule } from '@shared/shared.module';
-import { AppRoutingModule } from '@app/app-routing.module';
 import { environment } from '@environment/environment';
+import { SharedModule } from '@shared/shared.module';
+import { AppComponent } from '@app/app.component';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { httpInterceptorProviders } from '@app/common/interceptors';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { environment } from '@environment/environment';
 			registrationStrategy: 'registerWhenStable:30000',
 		}),
 	],
-	providers: [],
+	providers: [httpInterceptorProviders],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

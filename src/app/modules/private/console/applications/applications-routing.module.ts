@@ -4,14 +4,14 @@ import { ApplicationsComponent } from './applications.component';
 import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
-	{ 
-		path: '', 
-		component: ApplicationsComponent 
+	{
+		path: '',
+		component: ApplicationsComponent,
 	},
 	{
 		path: 'new',
-		component: CreateComponent
-	}
+		component: CreateComponent,
+	},
 ];
 
 @NgModule({
