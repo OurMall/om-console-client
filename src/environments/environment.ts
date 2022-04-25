@@ -4,6 +4,11 @@
 
 export const environment = {
 	production: false,
+	authorization_server: {
+		endpoint: 'http://localhost:8000',
+		client_id: 'well-known-console-client',
+		client_secret: '1098306124',
+	},
 };
 
 /*
