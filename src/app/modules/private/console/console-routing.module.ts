@@ -14,6 +14,9 @@ const routes: Routes = [
 			},
 			{
 				path: 'dashboard',
+				data: {
+					title: 'Dashboard'
+				}
 			},
 			{
 				path: 'applications',
