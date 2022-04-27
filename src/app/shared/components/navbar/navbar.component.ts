@@ -18,8 +18,4 @@ export class NavbarComponent implements OnInit {
 	authorize(): void {
 		this.oauth2Service.authorize().subscribe();
 	}
-
-	redirect(): void {
-		this.oauth2Service.redirectAuthorize();
-	}
 }

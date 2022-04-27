@@ -15,10 +15,10 @@ export class Oauth2Service {
 		private readonly router: Router
 	) {}
 
-	authorize(): Observable<any> {
+	getAuthorization(): Observable<any> {
 		return this.http.get<any>('oauth/known', {
 			params: {
-				token: environment.authorization_server.client_id,
+				token: environment.authorization_server.application_id,
 			},
 		}).pipe(
 			take(1),
@@ -33,7 +33,18 @@ export class Oauth2Service {
 		);
 	}
 
+	authorize(): Observable<any> {
+		return this.http.post<any>("oauth2/known/", {
+			application_id: environment.authorization_server.application_id,
+			application_secret: environment.authorization_server.application_secret
+		}).pipe(
+			tap((response) => {
+				console.log(response);
+			})
+		)
+	}
+
 	redirectAuthorize() {
-		return window.location.href = `${environment.authorization_server.endpoint}/oauth2/known?token=${environment.authorization_server.client_id}`;
+		return window.location.href = `${environment.authorization_server.endpoint}/oauth2/known?token=${environment.authorization_server.application_id}`;
 	}
 }
