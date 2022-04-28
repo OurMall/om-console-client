@@ -11,15 +11,19 @@ import { environment } from '@environment/environment';
 
 @Injectable()
 export class AuthorizationServerInterceptor implements HttpInterceptor {
-	private readonly authorizationServerMetadata: object =
-		environment.authorization_server;
+	private readonly authorizationServerMetadata: object = environment.authorization_server;
 
 	constructor() {}
 
 	intercept(
-		request: HttpRequest<unknown>,
+		httpRequest: HttpRequest<any>,
 		next: HttpHandler
-	): Observable<HttpEvent<unknown>> {
+	): Observable<HttpEvent<any>> {
+		const request = httpRequest.clone({
+			setHeaders: {
+				Authorization: `Bearer ${localStorage.getItem("known_token")}`
+			}
+		})
 		return next.handle(request);
 	}
 }

@@ -11,6 +11,7 @@ import { environment } from '@environment/environment';
 
 @Injectable()
 export class EndpointInterceptor implements HttpInterceptor {
+
 	private readonly endpoint: string = environment.authorization_server.endpoint;
 
 	constructor() {}
