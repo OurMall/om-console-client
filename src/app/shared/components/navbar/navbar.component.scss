@@ -10,8 +10,8 @@
 	position: -webkit-sticky;
 	top: 0;
 	background-color: variables.$light-color;
-	border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
-	box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+	//border: 1px solid rgba($color: variables.$dark-alt-color, $alpha: 0.3);
+	//box-shadow: 0 1px 8px rgba($color: variables.$dark-alt-color, $alpha: 0.3);
 	z-index: 1000;
 	overflow: hidden;
 
@@ -51,25 +51,28 @@
 			flex-direction: row;
 			align-items: center;
 
-			.link {
-				padding: 0 0.95rem 0 0.95rem;
-				font-weight: 700;
-				color: rgba($color: variables.$dark-alt-color, $alpha: 0.65);
-				letter-spacing: 0.75px;
-				cursor: pointer;
+			.link__button {
+				padding: .65rem .85rem;
+				color: rgba($color: variables.$light-color, $alpha: 1.0);
+				background-color: rgba($color: variables.$main-color, $alpha: 1.0);
+				border-radius: 20px;
+				transition: all 0.7s cubic-bezier(0.86, 0.01, 0.15, 0.99);
 
-				.icon {
-					display: none;
+				span {
+					//
+					font-weight: 600;
 				}
 
 				&:hover {
-					transition: 0.3s all ease-in-out;
-					color: variables.$main-color;
+					border-radius: 5px;
+					background-color: variables.$main-alt-color;
 				}
 			}
 
-			.active {
-				color: variables.$main-color;
+			.button__active {
+				background-color: variables.$main-alt-color;
+				border-radius: 5px;
+				color: rgba($color: variables.$light-color, $alpha: 0.8);
 			}
 		}
 	}

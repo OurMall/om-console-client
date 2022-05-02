@@ -7,6 +7,7 @@ import { RouteService } from '@app/common/services';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+
 	constructor(private routeService: RouteService) {}
 
 	ngOnInit(): void {

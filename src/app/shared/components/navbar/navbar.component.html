@@ -9,18 +9,10 @@
 			<span class="text">for Devs</span>
 		</a>
 		<nav>
-			<app-nav-link ></app-nav-link>
-			<a routerLink="products" routerLinkActive="active" class="link">
-				<i class="icon uil uil-apps"></i>
-				Productos
-			</a>
-			<a routerLink="docs" routerLinkActive="active" class="link">
-				<i class="icon uil uil-files-landscapes-alt"></i>
-				Documentaci&oacute;n
-			</a>
-			<a routerLink="login" routerLinkActive="active" class="link" (click)="authorize()">
-				<i class="icon uil uil-window"></i>
-				Consola
+			<app-nav-link *ngFor="let link of navLinks" [name]="link.name" [route]="link.route" [routeActiveClassName]="link.routeClassActive" ngClass="link"></app-nav-link>
+			<a routerLink="login" routerLinkActive="button__active" class="link__button">
+				<span>Log in</span>
+				<i class="icon uil uil-signout"></i>
 			</a>
 		</nav>
 	</div>

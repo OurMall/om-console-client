@@ -5,26 +5,46 @@
 				<h2 class="title">Iniciar Sesi&oacute;n</h2>
 			</div>
 			<div class="card__body">
-				<form (ngSubmit)="onSubmit()">
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 					<div class="om-field">
 						<input
+							pKeyFilter="email"
 							class="om-input"
+							formControlName="email"
 							type="email"
+							autocomplete="email"
 							id="email"
 							placeholder="Correo electr&oacute;nico"
+							required
 							autofocus
 						/>
+						<div class="om-field-error" *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+							<small class="om-field-error-text" *ngIf="email?.errors?.['required']">
+								El correo electr&oacute;nico es requerido
+							</small>
+							<small class="om-field-error-text" *ngIf="email?.errors?.['email']">
+								El correo electr&oacute;nico es inv&aacute;lido
+							</small>
+						</div>
 					</div>
 					<div class="om-field">
 						<input
 							class="om-input"
+							formControlName="password"
 							type="password"
+							autocomplete="current-password"
 							id="password"
 							placeholder="Contrase&ntilde;a"
+							required
 						/>
+						<div class="om-field-error" *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+							<small class="om-field-error-text" *ngIf="password?.errors?.['required']">
+								La contrase&ntilde;a es requerida
+							</small>
+						</div>
 					</div>
 					<div class="om-field">
-						<button class="om-button-flex" type="submit">
+						<button class="om-button-flex" type="submit" [disabled]="!loginForm.valid">
 							Acceder
 							<i class="icon uil uil-share"></i>
 						</button>

@@ -36,7 +36,7 @@
 
 /* ================================================ */
 
-/* BUTTONS 
+/* BUTTONS
 ================================================
 */
 
@@ -95,6 +95,21 @@
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 0 1.5rem 0;
+
+	&-error {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		&-text {
+			font-size: .75rem;
+			padding: .5rem 0;
+			color: rgba($color: variables.$dark-color, $alpha: 0.5);
+			font-weight: 600;
+		}
+	}
 }
 
 %_input {

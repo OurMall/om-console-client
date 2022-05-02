@@ -1,0 +1,23 @@
+@use "~src/assets/sass/variables";
+
+.link {
+	padding: 0 1.25rem 0 1.25rem;
+	font-size: 18px;
+	font-weight: 600;
+	color: rgba($color: variables.$dark-alt-color, $alpha: 0.65);
+	letter-spacing: 0.75px;
+	cursor: pointer;
+
+	.icon {
+		display: none;
+	}
+
+	&:hover {
+		transition: 0.3s all ease-in-out;
+		color: variables.$main-color;
+	}
+}
+
+.active {
+	color: variables.$main-color;
+}

@@ -1,4 +1,3 @@
-<a [routerLink]="route != undefined || null ? route : '404'" [routerLinkActive]="routeActiveClassName" class="link">
-	<i class="icon uil uil-apps"></i>
+<a [routerLink]="route != undefined || null ? route : '404'" [routerLinkActive]="routeActiveClassName != undefined || null ? routeActiveClassName : 'active'" class="link">
 	{{ name }}
 </a>

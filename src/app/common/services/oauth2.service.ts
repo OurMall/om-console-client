@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, filter, Observable, take, tap, throwError } from 'rxjs';
 
 import { environment } from '@environment/environment';
+import { ClientCredentials } from '@app/common/interfaces';
 
 @Injectable({
 	providedIn: 'root',
@@ -42,6 +43,14 @@ export class Oauth2Service {
 				console.log(response);
 			})
 		)
+	}
+
+	authorizeKnownClient(credentials: ClientCredentials): Observable<any> {
+		return this.http.post<any>("oauth2/known/", credentials).pipe(
+			take(1),
+			filter(response => response && !!response),
+			tap()
+		);
 	}
 
 	redirectAuthorize() {

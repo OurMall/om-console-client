@@ -7,7 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavLinkComponent } from './components/navbar/nav-link/nav-link.component';
 
 @NgModule({
-	declarations: [NavbarComponent, FooterComponent, NavLinkComponent],
+	declarations: [NavbarComponent, FooterComponent, NavLinkComponent ],
 	imports: [CommonModule, RouterModule],
 	exports: [NavbarComponent, FooterComponent],
 })
