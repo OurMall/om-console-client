@@ -50,3 +50,12 @@
 		}
 	}
 }
+
+.disabled {
+	cursor:default;
+	background-color: variables.$main-alt-color;
+
+	&:hover {
+		border-radius: 0;
+	}
+}

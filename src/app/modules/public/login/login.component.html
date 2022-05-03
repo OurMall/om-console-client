@@ -44,7 +44,7 @@
 						</div>
 					</div>
 					<div class="om-field">
-						<button class="om-button-flex" type="submit" [disabled]="!loginForm.valid">
+						<button class="om-button-flex {{!loginForm.valid ? 'disabled' : ''}}" type="submit" [disabled]="!loginForm.valid">
 							Acceder
 							<i class="icon uil uil-share"></i>
 						</button>
@@ -53,9 +53,9 @@
 			</div>
 			<div class="card__footer">
 				<div class="forgot__password">
-					<a routerLink="passwordRecovery" class="om-link"
-						>&iquest;Olvidaste tu contrase&ntilde;a?</a
-					>
+					<a routerLink="passwordRecovery" class="om-link">
+						&iquest;Olvidaste tu contrase&ntilde;a?
+					</a>
 				</div>
 			</div>
 		</div>

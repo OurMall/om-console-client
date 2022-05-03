@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, filter, Observable, take, tap, throwError } from 'rxjs';
 
@@ -12,10 +12,15 @@ export class AuthService {
 
 	private acessToken$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-	constructor(private readonly http: HttpClient, private storage: StorageService) { }
+	constructor(private readonly http: HttpClient) {  }
 
 	login(user: UserLogin): Observable<any> {
-		return this.http.post<any>("oauth2/login", user).pipe(
+		const httpOptions = {
+			headers: new HttpHeaders({
+				Authorization: `Bearer ${sessionStorage.getItem("known_token")}`
+			})
+		};
+		return this.http.post<any>("oauth2/login", user, httpOptions).pipe(
 			take(1),
 			filter(response => response && !!response),
 			tap((response) => {
@@ -28,7 +33,7 @@ export class AuthService {
 	}
 
 	hasToken(): Observable<boolean> {
-		const accessToken = this.storage.getItem("access_token");
+		const accessToken = localStorage.getItem("access_token"); //this.storage.getItem("access_token");
 		if(accessToken) {
 			this.acessToken$.next(true);
 		} else {

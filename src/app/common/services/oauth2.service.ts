@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, filter, Observable, take, tap, throwError } from 'rxjs';
 
 import { environment } from '@environment/environment';
-import { ClientCredentials } from '@app/common/interfaces';
+import { ClientCredentials, KnownAuthorization } from '@app/common/interfaces';
 
 @Injectable({
 	providedIn: 'root',
@@ -45,12 +45,13 @@ export class Oauth2Service {
 		)
 	}
 
-	authorizeKnownClient(credentials: ClientCredentials): Observable<any> {
-		return this.http.post<any>("oauth2/known/", credentials).pipe(
+	authorizeKnownClient(credentials: ClientCredentials): Observable<KnownAuthorization> {
+		return this.http.post<KnownAuthorization>("oauth2/known/", credentials).pipe(
 			take(1),
 			filter(response => response && !!response),
 			tap((response) => {
-				console.log(response);
+				// Save the known token in the localstorage.
+				sessionStorage.setItem("known_token", response.known_token);
 			}),
 			catchError((err: HttpErrorResponse) => {
 				return throwError(() => err);
