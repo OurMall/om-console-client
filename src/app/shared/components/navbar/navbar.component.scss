@@ -35,13 +35,13 @@
 			}
 
 			.text {
-				color: rgba($color: variables.$dark-alt-color, $alpha: 0.95);
+				color: rgba($color: variables.$main-color, $alpha: 1);
 				font-weight: 700;
 				font-size: 1.25rem;
 				margin-left: 0.5rem;
 
 				&:hover {
-					color: variables.$main-color;
+					color: variables.$main-alt-color;
 				}
 			}
 		}

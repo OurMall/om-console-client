@@ -49,7 +49,12 @@ export class Oauth2Service {
 		return this.http.post<any>("oauth2/known/", credentials).pipe(
 			take(1),
 			filter(response => response && !!response),
-			tap()
+			tap((response) => {
+				console.log(response);
+			}),
+			catchError((err: HttpErrorResponse) => {
+				return throwError(() => err);
+			})
 		);
 	}
 
