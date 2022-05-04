@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { catchError, filter, Observable, take, tap, throwError } from 'rxjs';
 
 import { environment } from '@environment/environment';
+import { SessionStorageService } from '@app/common/services';
 import { ClientCredentials, KnownAuthorization } from '@app/common/interfaces';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class Oauth2Service {
 
 	constructor(
 		private readonly http: HttpClient,
-		private readonly router: Router
+		private readonly sessionStorageService: SessionStorageService
 	) {}
 
 	getAuthorization(): Observable<any> {
@@ -51,7 +51,8 @@ export class Oauth2Service {
 			filter(response => response && !!response),
 			tap((response) => {
 				// Save the known token in the localstorage.
-				sessionStorage.setItem("known_token", response.known_token);
+				// sessionStorage.setItem("known_token", response.known_token);
+				this.sessionStorageService.setItem("known_token", response.known_token);
 			}),
 			catchError((err: HttpErrorResponse) => {
 				return throwError(() => err);

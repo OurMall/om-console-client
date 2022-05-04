@@ -7,7 +7,9 @@ export class StorageService {
 
 	private storage: Storage = localStorage;
 
-	constructor(storage?: Storage) {  }
+	constructor(storage: Storage) {
+		this.storage = storage;
+	}
 
 	setItem(key: string, value: any): void {
 		const item: any = JSON.stringify(value);
