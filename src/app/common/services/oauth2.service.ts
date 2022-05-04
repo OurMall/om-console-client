@@ -51,7 +51,7 @@ export class Oauth2Service {
 			filter(response => response && !!response),
 			tap((response) => {
 				// Save the known token in the localstorage.
-				// sessionStorage.setItem("known_token", response.known_token);
+				//sessionStorage.setItem("known_token", response.known_token);
 				this.sessionStorageService.setItem("known_token", response.known_token);
 			}),
 			catchError((err: HttpErrorResponse) => {

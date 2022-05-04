@@ -5,15 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-	private storage: Storage = localStorage;
+	private storage: Storage;
 
 	constructor(storage: Storage) {
 		this.storage = storage;
 	}
 
 	setItem(key: string, value: any): void {
-		const item: any = JSON.stringify(value);
-		this.storage.setItem(key, item);
+		//const item: any = JSON.stringify(value);
+		this.storage.setItem(key, value);
 	}
 
 	getItem(key: string): any {
