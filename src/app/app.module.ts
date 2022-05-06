@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ToastrModule } from 'ngx-toastr';
 
 import { environment } from '@environment/environment';
 import { SharedModule } from '@shared/shared.module';
@@ -20,6 +21,19 @@ import { httpInterceptorProviders } from '@app/common/interceptors';
 		HttpClientModule,
 		RouterModule,
 		SharedModule,
+		ToastrModule.forRoot({
+			closeButton: true,
+			timeOut: 5000,
+			extendedTimeOut: 2000,
+			progressBar: true,
+			positionClass: 'toast-top-right',
+			tapToDismiss: true,
+			onActivateTick: true,
+			maxOpened: 3,
+			autoDismiss: true,
+			//iconClasses: {},
+			preventDuplicates: true,
+		}),
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,
 			registrationStrategy: 'registerWhenStable:30000',

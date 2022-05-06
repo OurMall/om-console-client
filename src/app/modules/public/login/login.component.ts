@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { environment } from '@environment/environment';
 import { AuthService, Oauth2Service } from '@app/common/services';
-import { HttpErrorResponse } from '@angular/common/http';
+import { MessageService } from '@app/common/services';
 
 @Component({
 	selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private OAuth2Service: Oauth2Service,
-		private authService: AuthService
+		private authService: AuthService,
+		private message: MessageService
 	) {}
 
 	ngOnInit(): void {
@@ -35,10 +37,21 @@ export class LoginComponent implements OnInit {
 		}).subscribe({
 			next: (response) => {
 				console.log(response);
-				this.authService.login(this.loginForm.value).subscribe();
+				this.message.success("Se ha autorizado al cliente conocido");
+				this.authService.login(this.loginForm.value).subscribe({
+					next: (response) => {
+						this.message.success("inicio de sesion");
+						console.log(response);
+					},
+					error: (err: HttpErrorResponse) => {
+						this.message.error(err.message);
+						console.log(err);
+					}
+				});
 			},
 			error: (err: HttpErrorResponse) => {
 				console.log(err);
+				this.message.error(err.message)
 			}
 		});
 	}
