@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
 			application_secret: environment.authorization_server.application_secret
 		}).subscribe({
 			next: (response) => {
-				console.log(response);
 				this.message.success("Se ha autorizado al cliente conocido");
 				this.authService.login(this.loginForm.value).subscribe({
 					next: (response) => {
